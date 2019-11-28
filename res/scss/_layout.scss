@@ -1,0 +1,48 @@
+// Images layout 
+.ichigo{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 80vh;
+    border: 2px solid;
+    // background: url(../img/hollow.png);
+    background-size: cover;
+}
+.ichigo img{
+    width: 60%;
+    height: 80%;
+}
+.naruto{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 80vh;
+    border: 2px solid;
+    border-right: none;
+    // background: url(../img/seal.png);
+    background-size: cover;
+}
+.naruto img{
+    width: 60%;
+    height: 80%;
+}
+.interface{
+    display: none;
+}
+#hit img{
+    height: 2rem;
+    width: 2rem;
+}
+#heal img{
+    height: 2rem;
+    width: 2rem;
+}
+#shield img{
+    height: 2rem;
+    width: 2rem;
+}
+.characters{
+    display: flex;
+}
