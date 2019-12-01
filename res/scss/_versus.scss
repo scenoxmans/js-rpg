@@ -1,0 +1,16 @@
+#versus{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+.left{
+    background: red;
+    height: 100vh;
+    width: 100%
+}
+.right{
+    background: blue;
+    height: 100vh;
+    width: 100%;
+}

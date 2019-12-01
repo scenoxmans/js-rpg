@@ -38,6 +38,98 @@
     text-shadow: 0 0 20px blue;
   }
 }
+.loading {
+  display: none;
+}
+
+#hit img:hover {
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+#heal img:hover {
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+#shield img:hover {
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+#special img:hover {
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 .ichigo {
   display: flex;
   justify-content: center;
@@ -51,12 +143,14 @@
 .ichigo img {
   width: 60%;
   height: 80%;
+  margin: 0 auto;
 }
 
 .naruto {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  flex-direction: column;
   width: 50%;
   height: 80vh;
   border: 2px solid;
@@ -64,32 +158,132 @@
   background-size: cover;
 }
 
-.naruto img {
-  width: 45%;
-  height: 80%;
-}
-
-.interface {
+#narutoLogo {
+  margin: 0 auto;
+  width: 50%;
+  height: 20%;
   display: none;
 }
 
+.naruto img {
+  width: 60%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.interface {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
 #hit img {
-  height: 2rem;
-  width: 2rem;
+  height: 4rem;
+  width: 4rem;
 }
 
 #heal img {
-  height: 2rem;
-  width: 2rem;
+  height: 4rem;
+  width: 4rem;
 }
 
 #shield img {
-  height: 2rem;
-  width: 2rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+#special img {
+  height: 4rem;
+  width: 4rem;
 }
 
 .characters {
   display: flex;
+}
+
+#arena {
+  height: 30vh;
+}
+
+#hud {
+  background: rgba(34, 34, 34, 0.8);
+  height: 35vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.healthBar {
+  margin-right: auto;
+}
+
+#naruto-health {
+  width: 100%;
+  height: 22px;
+}
+
+.naruto-avatar img {
+  width: 15rem;
+  height: 14rem;
+}
+
+#actionCam {
+  width: 17rem;
+  height: 35vh;
+  border: 1px solid white;
+  background-repeat: no-repeat;
+}
+
+.enemy-hud {
+  background: rgba(34, 34, 34, 0.8);
+  height: 35vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.test {
+  height: 100%;
+  border: 1px solid white;
+  width: 15rem;
+  height: 14rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+#enemy-actionCam {
+  width: 17rem;
+  height: 35vh;
+  border: 1px solid white;
+}
+
+.enemy-interface {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+#enemy-hit img {
+  height: 4rem;
+  width: 4rem;
+}
+
+#enemy-heal img {
+  height: 4rem;
+  width: 4rem;
+}
+
+#enemy-shield img {
+  height: 4rem;
+  width: 4rem;
+}
+
+#enemy-special img {
+  height: 4rem;
+  width: 4rem;
+}
+
+#enemy-health {
+  width: 100%;
+  height: 22px;
 }
 
 * {
@@ -109,6 +303,7 @@ body, html {
 button {
   background: none;
   border: none;
+  outline: none;
 }
 
 .cool {
@@ -116,6 +311,33 @@ button {
   text-align: center;
   font-family: "Fredericka the Great", cursive;
   color: white;
+}
+
+.border {
+  border: 1px solid white;
+}
+
+#versus {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.left {
+  background: red;
+  height: 100vh;
+  width: 100%;
+}
+
+.right {
+  background: blue;
+  height: 100vh;
+  width: 100%;
+}
+
+#round-1 {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

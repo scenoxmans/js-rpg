@@ -10,20 +10,64 @@
     <script src="https://kit.fontawesome.com/71af718bb6.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
 </head>
-<body>
-        <div class="characters">
-            <div class="naruto"><img src="res/img/naruto-avatar.png" id="naruto"></div>
+<body id="fight">
+        <div class="characters" id="characters">
+            <div class="naruto"><img src="res/img/Naruto_logo.svg" id="narutoLogo"><img src="res/img/naruto-avatar.png" id="naruto"></div>
             <div class="ichigo"><img src="res/img/ichigo-Ava.png" id="ichigo"></div>
         </div>
-        <h1 class="cool glow">Choose your Hero</h1>
-<section>
+        <h1 class="cool glow" id="makeChoice">Choose your Hero</h1>
+    <!-------------------------- Loading section ------------------------->
+<section id="loading">
+
+</section>
+    <!-------------------------- Versus section ------------------------->
+<section id="versus">
+    <div class="left"></div>
+    <div class="right"></div>
+</section>
+<section id="round-1">
+    <!-------------------------- Enemy section ------------------------->
+    <div class="enemy-hud" id="enemy">
+                <div id="enemy-actionCam"></div>  
+
+        
+        <div class="enemy-interface">
+
+            <button id="enemy-special"><img src="/res/img/special.png"></button>
+            <button id="enemy-shield"><img src="/res/img/shield.png"></button>
+            <button id="enemy-heal"><img src="/res/img/heal.png"></button>
+            <button id="enemy-hit"><img src="/res/img/attack.png"></button>
+    
+        </div>
+            <div class="enemy-avatar">
+                    <div class="test"></div>
+                    <div class="healthBar"><progress id="enemy-health" value="100" max="100"></progress></div>
+            </div>
+    </div>
+<section id="arena">
+
+</section>
+    <!-------------------------- Naruto section ------------------------->
+<div id="hud">
+    <div class="naruto-avatar">
+        <img src="res/img/narutoavatar.png">
+        <div class="healthBar"><progress id="naruto-health" value="10" max="100"></progress></div>
+    </div>
+
     <div class="interface">
+
             <button id="hit"><img src="/res/img/attack.png"></button>
             <button id="heal"><img src="/res/img/heal.png"></button>
             <button id="shield"><img src="/res/img/shield.png"></button>
+            <button id="special"><img src="/res/img/special.png"></button>
+ 
     </div>
-    <div class="chat" id="log"></div>
+
+    <div id="actionCam"></div>
+</div>
 </section>
-<script type="module" src="res/js/main.js"></script>
+<script src="res/js/gamelogic.js"></script>
+<script src="res/js/main.js" type="module"></script>
+<script src="res/js/character.js" type="module"></script>
 </body>
 </html>
