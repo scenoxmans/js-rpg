@@ -9,7 +9,6 @@ let p1_avatar = document.getElementById('p1-avatar');
 let p1_item = document.getElementById('p1-item')
 let p2_avatar = document.getElementById('p2-avatar');
 let p2_item = document.getElementById('p2-item');
-
 ///Players
 let player1;
 let player2;
@@ -35,6 +34,10 @@ p2_itachi.addEventListener('click', p2_createItachi);
 let p1_hit = document.getElementById('p1-attack');
 let p1_heal = document.getElementById('p1-heal');
 let p1_run = document.getElementById('p1-run');
+p1_hit.style.cursor = 's-resize';
+p1_heal.style.cursor = 'cell';
+p1_run.style.cursor = 'help';
+
 p1_hit.addEventListener('click', p1Attack);
 p1_heal.addEventListener('click', p1Heal);
 p1_run.addEventListener('click', p1Run);
@@ -43,6 +46,13 @@ p1_run.addEventListener('click', p1Run);
 let p2_hit = document.getElementById('p2-attack');
 let p2_heal = document.getElementById('p2-heal');
 let p2_run = document.getElementById('p2-run');
+p2_hit.style.cursor = 'not-allowed';
+p2_heal.style.cursor = 'not-allowed';
+p2_run.style.cursor = 'help';
+
+p2_hit.disabled = true;
+p2_heal.disabled = true;
+
 p2_hit.addEventListener('click', p2Attack);
 p2_heal.addEventListener('click', p2Heal);
 p2_run.addEventListener('click', p2Run);
@@ -252,6 +262,10 @@ function p2_getEarth(){
 }
 ///Player 1 functions
 function p1Attack(){
+    p1_hit.style.cursor = 'not-allowed';
+    p1_heal.style.cursor = 'not-allowed';
+    p1_hit.disabled = true;
+    p1_heal.disabled = true;
     let blockChance = Math.floor(Math.random()*10)+1;
     if(player2.item == 'earth' && blockChance <= 2){
         player1.attack = 0;
@@ -285,8 +299,33 @@ function p1Attack(){
     updateHealth()
     console.log(player2.health);
     console.log(blockChance)
+    p2_hit.disabled = false;
+    p2_heal.disabled = false;
+    p2_hit.style.cursor = 's-resize';
+    p2_heal.style.cursor = 'cell';
+
 }
 function p1Heal(){
+    p1_hit.style.cursor = 'not-allowed';
+    p1_heal.style.cursor = 'not-allowed';
+    p1_hit.disabled = true;
+    p1_heal.disabled = true;
+    if(player1.name == 'Naruto'){
+        player1.healingPoints = Math.floor(Math.random()*10)+6;
+        console.log(player1.healingPoints);
+    }
+    if(player1.name == 'Madara'){
+        player1.healingPoints = Math.floor(Math.random()*3)+4;
+        console.log(player1.healingPoints);
+    }
+    if(player1.name == 'Sasuke'){
+        player1.healingPoints = Math.floor(Math.random()*5)+3;
+        console.log(player1.healingPoints);
+    }     
+    if(player1.name == 'Itachi'){
+        player1.healingPoints = Math.floor(Math.random()*5)+4;
+        console.log(player1.healingPoints);
+    }  
     if(player1.health < player1.maxHealth){
         player1.health += player1.healingPoints;
         chat.insertAdjacentHTML("afterbegin", `${player1.name} healed for ${player1.healingPoints} points of health.`+"<br>");
@@ -296,6 +335,10 @@ function p1Heal(){
     }
     updateHealth()
     console.log(player1.health);
+    p2_hit.disabled = false;
+    p2_heal.disabled = false;
+    p2_hit.style.cursor = 's-resize';
+    p2_heal.style.cursor = 'cell';
 }
 function p1Run(){
     alert(player1.name + " has given up!")
@@ -304,6 +347,31 @@ function p1Run(){
 }
 ///Player 2 functions 
 function p2Attack(){
+    p2_hit.style.cursor = 'not-allowed';
+    p2_heal.style.cursor = 'not-allowed';
+    p2_hit.disabled = true;
+    p2_heal.disabled = true;
+    let blockChance = Math.floor(Math.random()*10)+1;
+    if(player1.item == 'earth' && blockChance <= 2){
+        player2.attack = 0;
+        chat.insertAdjacentHTML("afterbegin", `${player1.name} blocked your attack.`+"<br>");
+    }
+    if(player2.name == 'Naruto'){
+    player2.attack = Math.floor(Math.random()*10)+11;
+    console.log(player2.attack);
+    }
+    if(player2.name == 'Madara'){
+        player2.attack = Math.floor(Math.random()*10)+16;
+        console.log(player2.attack);
+    }
+    if(player2.name == 'Sasuke'){
+        player2.attack = Math.floor(Math.random()*10)+12;
+        console.log(player2.attack);
+    }     
+    if(player2.name == 'Itachi'){
+        player2.attack = Math.floor(Math.random()*10)+11;
+        console.log(player2.attack);
+    }  
     let chance = Math.floor(Math.random()*10);
     player2.attack = Math.floor(Math.random()*10)+11;
     console.log(player2.attack);
@@ -317,8 +385,17 @@ function p2Attack(){
     }
     updateHealth()
     console.log(player2.health);
+    p1_hit.disabled = false;
+    p1_heal.disabled = false;
+    p1_hit.style.cursor = 's-resize';
+    p1_heal.style.cursor = 'cell';
 }
 function p2Heal(){
+    p2_hit.style.cursor = 'not-allowed';
+    p2_heal.style.cursor = 'not-allowed';
+    p2_hit.disabled = true;
+    p2_heal.disabled = true;
+    player2.healingPoints = Math.floor(Math.random()*3)+4;
     if(player2.health < player2.maxHealth){
         player2.health += player2.healingPoints;
         chat.insertAdjacentHTML("afterbegin", `${player2.name} healed for ${player2.healingPoints} points of health.`+"<br>");
@@ -328,6 +405,10 @@ function p2Heal(){
     }
     updateHealth()
     console.log(player1.health);
+    p1_hit.disabled = false;
+    p1_heal.disabled = false;
+    p1_hit.style.cursor = 's-resize';
+    p1_heal.style.cursor = 'cell';
 }
 function p2Run(){
     alert(player2.name + " has given up!")
@@ -372,6 +453,7 @@ function restartGame(){
     p2_earth.disabled = false;
     arena.style.display = "none";
     selector.style.display = "block";
+    chat.innerHTML = "";
 }
 ///Object constructor
 function Person(name, item, attack, attackRate, health, maxHealth, healingPoints, dodgeChance) {
