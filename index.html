@@ -11,82 +11,91 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
 </head>
 <body>
-<section id="fight">
-        <div class="characters" id="characters">
-            <div class="naruto" onclick="playAsNaruto()"><img src="res/img/naruto-avatar.png" id="naruto" name="Naruto"></div>
-            <div class="ichigo" onclick="playAsIchigo()"><img src="res/img/ichigo-Ava.png" id="ichigo"></div>
+    <!-------------------------- Characters section ------------------------->
+<section id="selector">
+        <h1 class="cool glow">Choose your Hero</h1>
+    <div class="selector">
+        <div class="characters">
+            <div class="naruto" title="Naruto: Health - 130, Damage - 15, HealingFactor - 15"><button id="naruto-p1" value="Naruto"><img src="res/img/naruto-avatar.png" alt="naruto"></button></div>
+            <div class="madara" title="Madara: Health - 230, Damage - 25, HealingFactor - 5"><button id="madara-p1" value="Madara"><img src="res/img/madara-avatar.png" alt="madara"></button></div>
+            <div class="sasuke" title="Sasuke: Health - 100, Damage - 17, HealingFactor - 6"><button id="sasuke-p1" value="Sasuke"><img src="res/img/sasuke-avatar.png" alt="sasuke"></button></div>
+            <div class="itachi" title="Itachi:  Health - 80, Damage - 21, HealingFactor - 10"><button id="itachi-p1" value="Itachi"><img src="res/img/itachi-avatar.png" alt="itachi"></button></div>
         </div>
-        <h1 class="cool glow" id="makeChoice">Choose your Hero</h1>
+        <div class="vs-img"><img src="res/img/versus.png" alt="vs"></div>
+        <div class="characters">
+            <div class="naruto" title="Naruto: Health - 130, Damage - 15, HealingFactor - 15"><button id="naruto-p2" value="Naruto"><img src="res/img/naruto-avatar.png" alt="naruto"></button></div>
+            <div class="madara" title="Madara: Health - 230, Damage - 25, HealingFactor - 5"><button id="madara-p2" value="Madara"><img src="res/img/madara-avatar.png" alt="madara"></button></div>
+            <div class="sasuke" title="Sasuke: Health - 100, Damage - 17, HealingFactor - 6"><button id="sasuke-p2" value="Sasuke"><img src="res/img/sasuke-avatar.png" alt="sasuke"></button></div>
+            <div class="itachi" title="Itachi:  Health - 80, Damage - 21, HealingFactor - 10"><button id="itachi-p2" value="Itachi"><img src="res/img/itachi-avatar.png" alt="itachi"></button></div>
+        </div>
+    </div>
+    <div class="character-discription">
+            <span></span>
+        </div>
 </section>
-    <!-------------------------- Loading section ------------------------->
-<section id="loading">
-
-</section>
+    <!-------------------------- Items section ------------------------->
 <section id="choose-item">
         <h1 class="cool glow">Choose your element</h1>
-  <div class="scroll">
-
-        <div>
-            <button id="fire" value="fire" onclick="choosesFire()"><img src="res/img/fire.png"></button>
-            <p>+ 10 damage</p>
+    <div class="items-main">
+        <div class="items">
+            <button id="fire-p1" value="fire" title="Fire: Increases base damage by 30%!"><img src="res/img/fire-main.png" alt="fire"></button>
+            <button id="water-p1" value="water" title="Water: Increases base healing factor by 20%!"><img src="res/img/water-main.png" alt="water"></button>
+            <button id="wind-p1" value="wind" title="Wind: Increases base dodge by 20%!"><img src="res/img/wind-main.png" alt="wind"></button>
+            <button id="earth-p1" value="earth" title="Earth: Gives you 20% chance to block the damage!"><img src="res/img/earth-main.png" alt="earth"></button>
         </div>
-        <div>
-            <button id="water" value="water" onclick="choosesWater()"><img src="res/img/water.png"></button>
-            <p>+ 30 health</p>
+    <div class="space"></div>
+        <div class="items">
+            <button id="fire-p2" value="fire"><img src="res/img/fire-main.png" alt="fire"></button>
+            <button id="water-p2" value="water"><img src="res/img/water-main.png" alt="water"></button>
+            <button id="wind-p2" value="wind"><img src="res/img/wind-main.png" alt="wind"></button>
+            <button id="earth-p2"  value="earth"><img src="res/img/earth-main.png" alt="fire"></button>
         </div>
-        <div>
-            <button id="wind" value="wind" onclick="choosesWind()"><img src="res/img/wind.png"></button>
-            <p>+ 10 block</p>
-        </div>
-  </div>
+    </div>
+    <div class="item-discription">
+        <span></span>
+    </div>
 </section>
     <!-------------------------- Versus section ------------------------->
-<section id="versus">
+<!-- <section id="versus">
     <div class="left" id="left"><img src="res/img/naruto vs screen.png"></div>
     <div class="vs" id="vs"><img src="res/img/versus.png"></div>
     <div class="lightning" id="lightning"><img src="res/img/lightning.png"></div>
     <div class="right" id="right"><img src="res/img/madara vs screen.png"></div>
-</section>
-    <!-------------------------- Round-1 section ------------------------->
-<section id="round-1">
-    <!-------------------------- Enemy section ------------------------->
-    <div class="enemy-hud" id="enemy">
-                <div id="enemy-actionCam"></div>  
-
-        
-        <div class="enemy-interface">
-
-            <button id="enemy-special"><img src="res/img/special.png"></button>
-            <button id="enemy-shield"><img src="res/img/shield.png"></button>
-            <button id="enemy-hit"><img src="res/img/attack.png"></button>
-    
-        </div>
-            <div class="enemy-avatar">
-                    <img src="res/img/madara-avatar.png">
-                    <div class="healthBar"><progress id="enemy-health" value="100" max="100"></progress></div>
-            </div>
+</section> -->
+    <!-------------------------- Loading section ------------------------->
+<section id="loading">
+    <div class="loading">
+        <img src="res/img/loading.webp" alt="loading-gif">
+        <span>Loading...</span>
     </div>
+</section>
     <!-------------------------- Arena section ------------------------->
 <section id="arena">
-</section>
-    <!-------------------------- Naruto section ------------------------->
-<div id="hud">
-    <div class="naruto-avatar">
-        <img src="#" id="hud-img">
-        <div class="healthBar"><progress id="naruto-health" value="100" max="100"></progress></div>
+    <!-------------------------- Player 1 hud ------------------------->
+<div class="wrapper">
+    <div class="p1-interface">
+        <div class="p1-avatar"><img src="" alt="p1-avatar" id="p1-avatar"><progress id="p1-health-bar" value="" max=""></progress><span id="p1-healthText"></span></div>
+            <button id="p1-attack"><img src="res/img/attack.png" alt="p1-attack" class="icons"></button>
+            <button id="p1-heal"><img src="res/img/heal.png" alt="p1-heal" class="icons"></button>
+            <button id="p1-run"><img src="res/img/run.png" alt="p1-run" class="icons"></button>
+        <div class="p1-item"><img src="" alt="item" id="p1-item"></div>
     </div>
+<!-------------------------- Player 2 hud ------------------------->
+<div class="space">
+    <div id="log-chat">
 
-    <div class="interface">
-
-            <button id="hit" onclick="narutoStrike()"><img src="res/img/attack.png"></button>
-            <button id="shield" onclick="narutoBlock()"><img src="res/img/shield.png"></button>
-            <button id="special" onclick="specialing()"><img src="res/img/special.png"></button>
- 
     </div>
-
-    <div id="actionCam"></div>
+</div>
+    <div class="p2-interface">
+        <div class="p2-avatar"><img src="" alt="p2-avatar" id="p2-avatar"><progress id="p2-health-bar" value="" max=""></progress><span id="p2-healthText"></span></div>
+            <button id="p2-attack"><img src="res/img/attack.png" alt="p2-attack" class="icons"></button>
+            <button id="p2-heal"><img src="res/img/heal.png" alt="p2-heal" class="icons"></button>
+            <button id="p2-run"><img src="res/img/run.png" alt="p2-run" class="icons"></button>
+        <div class="p2-item"><img src="" alt="item" id="p2-item"></div>
+    </div>
 </div>
 </section>
+
 <script src="res/js/gamelogic.js"></script>
 </body>
 </html>
