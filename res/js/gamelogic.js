@@ -9,6 +9,24 @@ let p1_avatar = document.getElementById('p1-avatar');
 let p1_item = document.getElementById('p1-item')
 let p2_avatar = document.getElementById('p2-avatar');
 let p2_item = document.getElementById('p2-item');
+///Characters img selector
+p1_naruto_selected = document.getElementById('img-naruto-p1');
+p1_madara_selected = document.getElementById('img-madara-p1');
+p1_sasuke_selected = document.getElementById('img-sasuke-p1');
+p1_itachi_selected = document.getElementById('img-itachi-p1');
+p2_naruto_selected = document.getElementById('img-naruto-p2');
+p2_madara_selected = document.getElementById('img-madara-p2');
+p2_sasuke_selected = document.getElementById('img-sasuke-p2');
+p2_itachi_selected = document.getElementById('img-itachi-p2');
+///Elements img selector
+p1_fire_btn = document.getElementById('p1-fire-btn');
+p1_water_btn = document.getElementById('p1-water-btn');
+p1_wind_btn = document.getElementById('p1-wind-btn');
+p1_earth_btn = document.getElementById('p1-earth-btn');
+p2_fire_btn = document.getElementById('p2-fire-btn');
+p2_water_btn = document.getElementById('p2-water-btn');
+p2_wind_btn = document.getElementById('p2-wind-btn');
+p2_earth_btn = document.getElementById('p2-earth-btn');
 ///Players
 let player1;
 let player2;
@@ -72,135 +90,180 @@ let p2_wind = document.getElementById('wind-p2');
 let p2_earth = document.getElementById('earth-p2');
 ///Player-1 Choices
 function p1_createNaruto(){
-    player1 = new Person("Naruto", undefined , 21, 5, 130, 130, 15, 4);
+    p1_madara.src = 'res/img/madara-selected.png'
+    player1 = new Person("Naruto", undefined , 21, 130, 130, 15, 4);
     if(player1.name == "Naruto"){
         p2_naruto.disabled = true;
-    p1_avatar.src = 'res/img/naruto-avatar.png';
+        p1_avatar.src = 'res/img/naruto-avatar.png';
     }
+    p1_naruto.classList.add('p1');
+    p1_madara_selected.src = 'res/img/madara-selected.png';
+    p1_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p1_itachi_selected.src = 'res/img/itachi-selected.png';
+    p2_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player1)
+    disableAllP1()
 }
 function p1_createMadara(){
-    player1 = new Person("Madara", undefined , 25, 6, 230, 230, 5, 4);
+    player1 = new Person("Madara", undefined , 25, 230, 230, 5, 4);
     if(player1.name == "Madara"){
         p2_madara.disabled = true;
         p1_avatar.src = 'res/img/madara-avatar.png';
     }
+    p1_madara.classList.add('p1');
+    p2_madara_selected.src = 'res/img/madara-selected.png';
+    p1_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p1_itachi_selected.src = 'res/img/itachi-selected.png';
+    p1_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player1)
+    disableAllP1()
 }
 function p1_createSasuke(){
-    player1 = new Person("Sasuke", undefined , 22, 7, 100, 100, 8, 4);
+    player1 = new Person("Sasuke", undefined , 22, 100, 100, 8, 4);
     if(player1.name == "Sasuke"){
         p2_sasuke.disabled = true;
         p1_avatar.src = 'res/img/sasuke-avatar.png';
     }
+    p1_sasuke.classList.add('p1');
+    p1_madara_selected.src = 'res/img/madara-selected.png';
+    p2_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p1_itachi_selected.src = 'res/img/itachi-selected.png';
+    p1_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player1)
+    disableAllP1()
 }
 function p1_createItachi(){
-    player1 = new Person("Itachi", undefined , 21, 8, 80, 80, 10, 6);
+    player1 = new Person("Itachi", undefined , 21, 80, 80, 10, 6);
     if(player1.name == "Itachi"){
         p2_itachi.disabled = true;
         p1_avatar.src = 'res/img/itachi-avatar.png';
     }
+    p1_itachi.classList.add('p1');
+    p1_madara_selected.src = 'res/img/madara-selected.png';
+    p1_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p2_itachi_selected.src = 'res/img/itachi-selected.png';
+    p1_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player1)
+    disableAllP1()
 }
 ///Player-2 Choices
 function p2_createNaruto(){
-    player2 = new Person("Naruto", undefined , 20, 5, 130, 130, 15, 3);
+    player2 = new Person("Naruto", undefined , 20, 130, 130, 15, 3);
     if(player2.name == "Naruto"){
         p1_naruto.disabled = true;
         p2_avatar.src = 'res/img/naruto-avatar.png';
     }
+    p2_naruto.classList.add('p2');
+    p2_madara_selected.src = 'res/img/madara-selected.png';
+    p2_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p2_itachi_selected.src = 'res/img/itachi-selected.png';
+    p1_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player2)
+    disableAllP2()
 }
 function p2_createMadara(){
-    player2 = new Person("Madara", undefined , 25, 6, 230, 230, 5, 4);
+    player2 = new Person("Madara", undefined , 25, 230, 230, 5, 4);
     if(player2.name == "Madara"){
         p1_madara.disabled = true;
         p2_avatar.src = 'res/img/madara-avatar.png';
     }
+    p2_madara.classList.add('p2');
+    p1_madara_selected.src = 'res/img/madara-selected.png';
+    p2_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p2_itachi_selected.src = 'res/img/itachi-selected.png';
+    p2_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player2)
+    disableAllP2()
 }
 function p2_createSasuke(){
-    player2 = new Person("Sasuke", undefined , 22, 7, 100, 100, 8, 4);
+    player2 = new Person("Sasuke", undefined , 22, 100, 100, 8, 4);
     if(player2.name == "Sasuke"){
         p1_sasuke.disabled = true;
         p2_avatar.src = 'res/img/sasuke-avatar.png';
     }
+    p2_sasuke.classList.add('p2');
+    p2_madara_selected.src = 'res/img/madara-selected.png';
+    p1_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p2_itachi_selected.src = 'res/img/itachi-selected.png';
+    p2_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player2)
+    disableAllP2()
 }
 function p2_createItachi(){
-    player2 = new Person("Itachi", undefined , 21, 8, 80, 80, 10, 6);
+    player2 = new Person("Itachi", undefined , 21, 80, 80, 10, 6);
     if(player2.name == "Itachi"){
         p1_itachi.disabled = true;
         p2_avatar.src = 'res/img/itachi-avatar.png';
     }
+    p2_itachi.classList.add('p2');
+    p2_madara_selected.src = 'res/img/madara-selected.png';
+    p2_sasuke_selected.src = 'res/img/sasuke-selected.png';
+    p1_itachi_selected.src = 'res/img/itachi-selected.png';
+    p2_naruto_selected.src = 'res/img/naruto-selected.png';
     playersReady()
     updateHealth()
-    console.log(player2)
+    disableAllP2()
 }
 //Item Selection P1
 function p1_getFire(){
     player1.item = p1_fire.value;
     player1.attack += 30 / 100 * player1.attack;
-    p1_fire.disabled = true;
-    p1_water.disabled = true;
-    p1_wind.disabled = true;
-    p1_earth.disabled = true;
     if(player1.item == "fire"){
         p1_item.src = 'res/img/fire-main.png';
     }
+    p1_fire_btn.classList.add('scale');
+    disableAllItemsP1()
     console.log(player1)
     itemsAreSelected()
+    p1_water_btn.src = 'res/img/water-selected.png';
+    p1_wind_btn.src = 'res/img/wind-selected.png';
+    p1_earth_btn.src = 'res/img/earth-selected.png';
 }
 function p1_getWater(){
     player1.item = p1_water.value;
     player1.healingPoints += 20 / 100 * player1.healingPoints;
-    p1_fire.disabled = true;
-    p1_water.disabled = true;
-    p1_wind.disabled = true;
-    p1_earth.disabled = true;
+    disableAllItemsP1()
     if(player1.item == "water"){
         p1_item.src = 'res/img/water-main.png';
     }
+    p1_water_btn.classList.add('scale');
+    p1_fire_btn.src = 'res/img/fire-selected.png';
+    p1_wind_btn.src = 'res/img/wind-selected.png';
+    p1_earth_btn.src = 'res/img/earth-selected.png';
     console.log(player1)
     itemsAreSelected()
 }
 function p1_getWind(){
     player1.item = p1_wind.value;
     player1.dodgeChance += 20 / 100 * player1.dodgeChance;
-    p1_fire.disabled = true;
-    p1_water.disabled = true;
-    p1_wind.disabled = true;
-    p1_earth.disabled = true;
+    disableAllItemsP1()
     if(player1.item == "wind"){
         p1_item.src = 'res/img/wind-main.png';
     }
+    p1_wind_btn.classList.add('scale');
+    p1_fire_btn.src = 'res/img/fire-selected.png';
+    p1_water_btn.src = 'res/img/water-selected.png';
+    p1_earth_btn.src = 'res/img/earth-selected.png';
     console.log(player1)
     itemsAreSelected()
 }
 function p1_getEarth(){
     player1.item = p1_earth.value;
-    p1_fire.disabled = true;
-    p1_water.disabled = true;
-    p1_wind.disabled = true;
-    p1_earth.disabled = true;
+    disableAllItemsP1()
     if(player1.item == "earth"){
         p1_item.src = 'res/img/earth-main.png';
     }
+    p1_earth_btn.classList.add('scale');
+    p1_fire_btn.src = 'res/img/fire-selected.png';
+    p1_water_btn.src = 'res/img/water-selected.png';
+    p1_wind_btn.src = 'res/img/wind-selected.png';
     console.log(player1)
     itemsAreSelected()
 }
@@ -212,51 +275,55 @@ p2_earth.addEventListener('click', p2_getEarth);
 function p2_getFire(){
     player2.item = p2_fire.value;
     player2.attack += 30 / 100 * player2.attack;
-    p2_fire.disabled = true;
-    p2_water.disabled = true;
-    p2_wind.disabled = true;
-    p2_earth.disabled = true;
+    disableAllItemsP2()
     if(player2.item == "fire"){
         p2_item.src = 'res/img/fire-main.png';
     }
+    p2_fire_btn.classList.add('scale');
+    p2_water_btn.src = 'res/img/water-selected.png';
+    p2_wind_btn.src = 'res/img/wind-selected.png';
+    p2_earth_btn.src = 'res/img/earth-selected.png';
     console.log(player2)
     itemsAreSelected()
 }
 function p2_getWater(){
     player2.item = p2_water.value;
     player2.healingPoints += 20 / 100 * player2.healingPoints;
-    p2_fire.disabled = true;
-    p2_water.disabled = true;
-    p2_wind.disabled = true;
-    p2_earth.disabled = true;
+    disableAllItemsP2()
     if(player2.item == "water"){
         p2_item.src = 'res/img/water-main.png';
     }
+    p2_water_btn.classList.add('scale');
+    p2_fire_btn.src = 'res/img/fire-selected.png';
+    p2_wind_btn.src = 'res/img/wind-selected.png';
+    p2_earth_btn.src = 'res/img/earth-selected.png';
     console.log(player2)
     itemsAreSelected()
 }
 function p2_getWind(){
     player2.item = p2_wind.value;
     player2.dodgeChance += 20 / 100 * player2.dodgeChance;
-    p2_fire.disabled = true;
-    p2_water.disabled = true;
-    p2_wind.disabled = true;
-    p2_earth.disabled = true;
+    disableAllItemsP2()
     if(player2.item == "wind"){
         p2_item.src = 'res/img/wind-main.png';
     }
+    p2_wind_btn.classList.add('scale');
+    p2_fire_btn.src = 'res/img/fire-selected.png';
+    p2_water_btn.src = 'res/img/water-selected.png';
+    p2_earth_btn.src = 'res/img/earth-selected.png';
     console.log(player2)
     itemsAreSelected()
 }
 function p2_getEarth(){
     player2.item = p2_earth.value;
-    p2_fire.disabled = true;
-    p2_water.disabled = true;
-    p2_wind.disabled = true;
-    p2_earth.disabled = true;
+    disableAllItemsP2()
     if(player2.item == "earth"){
         p2_item.src = 'res/img/earth-main.png';
     }
+    p2_earth_btn.classList.add('scale');
+    p2_fire_btn.src = 'res/img/fire-selected.png';
+    p2_water_btn.src = 'res/img/water-selected.png';
+    p2_wind_btn.src = 'res/img/wind-selected.png';
     console.log(player2)
     itemsAreSelected()
 }
@@ -417,21 +484,27 @@ function p2Run(){
 }
 /// Game manager functions
 function playersReady(){
-    if(player1.name && player2.name != ''){
-        selector.style.display = "none";
-        item_selector.style.display = "block";
-    }
+    setTimeout(function(){
+        if(player1.name && player2.name != ''){
+            selector.style.display = "none";
+            item_selector.style.display = "block";
+        }
+    },2000)
 }
 function itemsAreSelected(){
-    if(player1.item && player2.item != undefined){
-        item_selector.style.display = "none";
-        loading.style.display = "block";
+    setTimeout(function(){
+        if(player1.item && player2.item != undefined){
+            item_selector.style.display = "none";
+            loading.style.display = "block";
+        }
+    },2000)
+
         setTimeout(function(){
             loading.style.display = "none";
             arena.style.display = "block";
         },3000);
     }
-}
+
 function updateHealth() {
     document.getElementById("p1-health-bar").value = Math.floor( player1.health);
     document.getElementById("p1-health-bar").max = player1.maxHealth;
@@ -451,12 +524,44 @@ function restartGame(){
     p2_water.disabled = false;
     p2_wind.disabled = false;
     p2_earth.disabled = false;
+    p1_naruto.disabled = false;
+    p1_madara.disabled = false;
+    p1_sasuke.disabled = false;
+    p1_itachi.disabled = false;
+    p2_naruto.disabled = false;
+    p2_madara.disabled = false;
+    p2_sasuke.disabled = false;
+    p2_itachi.disabled = false;
     arena.style.display = "none";
     selector.style.display = "block";
     chat.innerHTML = "";
 }
+function disableAllP1(){
+    p1_naruto.disabled = true;
+    p1_madara.disabled = true;
+    p1_sasuke.disabled = true;
+    p1_itachi.disabled = true;
+}
+function disableAllP2(){
+    p2_naruto.disabled = true;
+    p2_madara.disabled = true;
+    p2_sasuke.disabled = true;
+    p2_itachi.disabled = true;
+}
+function disableAllItemsP1(){
+    p1_fire.disabled = true;
+    p1_water.disabled = true;
+    p1_wind.disabled = true;
+    p1_earth.disabled = true;
+}
+function disableAllItemsP2(){
+    p2_fire.disabled = true;
+    p2_water.disabled = true;
+    p2_wind.disabled = true;
+    p2_earth.disabled = true;
+}
 ///Object constructor
-function Person(name, item, attack, attackRate, health, maxHealth, healingPoints, dodgeChance) {
+function Person(name, item, attack, health, maxHealth, healingPoints, dodgeChance) {
     this.name = name;
     this.item = item;
     this.attack = attack;
